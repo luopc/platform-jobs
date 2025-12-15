@@ -19,6 +19,8 @@ public class SpringJobExecutor {
     public void demoJobHandler() throws Exception {
         XxlJobHelper.log("XXL-JOB, Hello World.");
 
+        String jobParm = XxlJobHelper.getJobParam();
+        log.info("jobParm:{}", jobParm);
         for (int i = 0; i < 5; i++) {
             XxlJobHelper.log("beat at:" + i);
             TimeUnit.SECONDS.sleep(2);

@@ -1,0 +1,29 @@
+server:
+  port: 0
+
+spring:
+# 允许bean定义覆盖
+#  main:
+#    allow-bean-definition-overriding: true
+  application:
+    name: spring-job-executor
+    version: '@project.version@'
+  profiles:
+    active: '@profiles.active@'
+    include: web
+
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8180/xxl-job-admin
+      accessToken: 8L7kT/nxlM8NKRg8DfnKHPGdlZ80u3mEnRHPfLtVEI0=
+      timeout: 30
+    executor:
+      appName: spring-job-executor
+      address:
+      ip: 192.168.3.160
+      port: 8998
+      logPath: /c/data/applogs/xxl-job/jobhandler
+      logRetentionDays: 30
+      excludedPackage:
+

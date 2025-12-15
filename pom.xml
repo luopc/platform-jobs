@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.luopc.platform.infra.jobs</groupId>
+    <artifactId>platform-jobs</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Platform Jobs</name>
+    <description>Jobs modules for platform services</description>
+    <modules>
+        <module>test-job-simple</module>
+        <module>test-job-spring</module>
+        <module>test-job-ai</module>
+        <module>test-job-share</module>
+    </modules>
+    <parent>
+        <groupId>com.luopc.platform.parent</groupId>
+        <artifactId>platform-boot-ai</artifactId>
+        <version>2.10.7</version>
+    </parent>
+
+    <properties>
+        <java.version>21</java.version>
+        <xxl-job.version>3.3.0</xxl-job.version>
+        <!-- xxl-sso (+xxl-tool、gson) -->
+        <xxl-sso.version>2.2.0</xxl-sso.version>
+        <!-- xxl-tool -->
+        <xxl-tool.version>2.3.2</xxl-tool.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- xxl-job-core -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luopc.platform.boot</groupId>
+                <artifactId>common-process</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luopc.platform.boot</groupId>
+                <artifactId>common-web</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luopc.platform.boot</groupId>
+                <artifactId>common-core</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luopc.platform.boot</groupId>
+                <artifactId>common-data</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luopc.platform.boot</groupId>
+                <artifactId>common-test</artifactId>
+                <scope>test</scope>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luopc.platform.boot.middleware</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>1.0.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luopc.platform.boot.middleware</groupId>
+                <artifactId>eureka-client</artifactId>
+                <version>1.0.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <scm>
+        <url>https://github.com/luopc/platform-jobs/</url>
+        <connection>scm:git:https://github.com/luopc/platform-jobs</connection>
+        <developerConnection>scm:git:https://github.com/luopc/platform-jobs</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+</project>
